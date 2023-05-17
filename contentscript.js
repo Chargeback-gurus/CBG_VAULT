@@ -7,7 +7,7 @@
     var input=inputs[i];
     console.info(input)
     if(input.type=="password"){
-      {input.value="Password@123"}
+      {input.value="Password@123"} 
       // keydownupFunc(input.value)
     }
     if(input.type=="text" || input.type =="email" || input.type =="number"){
@@ -15,7 +15,8 @@
       // keydownupFunc(input.value);
     }
     if(input.type  && input.type == "submit"){
-      input.click();
+      input.click();    
+      console.log()
     };
   }
 
