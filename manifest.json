@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+
+  "name": "CBG-VAULT",
+  "description": "This extension will allow users to login to vena accounts",
+  "version": "1.0",
+
+  "action": {
+     "default_popup": "popup.html"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "http://3.139.138.221:8080/jenkins/login"
+      ],
+      "js": [
+        "contentscript.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "contentscript.js"
+},
+  "permissions": [
+    "tabs",
+    "contextMenus",
+     "http://*/*",
+      "https://*/*",
+    "activeTab", 
+    "scripting",
+    "http://3.139.138.221:8080/jenkins/login"
+  ],
+  "host_permissions": [
+    "http://3.139.138.221:8080/jenkins/login"
+  ]
+}
