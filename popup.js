@@ -1,4 +1,3 @@
-
     // document.addEventListener("DOMContentLoaded", function() {
     //   var checkPageButton = document.getElementById('checkPage');
     //   checkPageButton.addEventListener('click', function() {
@@ -67,6 +66,23 @@ async function updateUI() {
   });
 }
 if(document.readyState === 'loading') {
+  var x = new XMLHttpRequest();
+    x.open('GET', 'http://localhost:8082/vault-ext/credentials');
+    x.onload = function() {
+      var response = JSON.parse(x.responseText);
+      console.log('respo',response);
+     let tempArray =[];
+      response.forEach((res)=>{
+        let obj = {
+          password :CryptoJS.AES.decrypt("U2FsdGVkX1+cN6OlV1ja7JOEjn8dugt1OcBUwro+4CI=","qijviweferwuofhvu")
+        }
+        tempArray.push(obj);
+        // response.password = CryptoJS.AES.decrypt(res.password,res.secretKey);
+        // res.password =CryptoJS.AES.decrypt(res.password,res.secretKey)
+      });
+      console.log('update',tempArray)
+    };
+    x.send();
 document.addEventListener('DOMContentLoaded', updateUI);
 }else{
   updateUI();
