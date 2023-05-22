@@ -21,16 +21,22 @@
     }
   ],
   "background": {
-    "service_worker":"background.js"
+    "service_worker":"background.js",
+    "type": "module"
 },
   "permissions": [
     "tabs",
     "contextMenus",
     "activeTab", 
     "scripting",
-    "cookies"
+    "cookies",
+    "notifications"
+
   ],
   "host_permissions": [
-    "https://*/*"
+    "https://*/*",
+    "http://*/*"
+ 
+
   ]
 }

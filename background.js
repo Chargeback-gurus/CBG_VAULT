@@ -10,7 +10,7 @@
   chrome.action.onClicked.addListener(function(tab) { 
     // var link = tab.url;
     var x = new XMLHttpRequest();
-    x.open('GET', 'http://localhost:8082/vault-ext/credentials' + link);
+    x.open('GET', 'http://localhost:8082/vault-ext/credentials');
     x.onload = function() {
         alert(x.responseText);
     };
