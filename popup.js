@@ -112,6 +112,7 @@ for(const ele of btnElement){
 if(document.readyState === 'loading') {
   var token;
   cookie_name = "accessToken",
+  cookie_set ="SelectedRoleFlag"
   domain ="http://3.139.138.221/cbg_icbmp_web/#/auth/profile";
   get_cookies().then(value=>{
     console.log('antpony',value);
@@ -119,12 +120,14 @@ if(document.readyState === 'loading') {
     getPasswordList();
   })
   async function get_cookies(){
-    let obj = await chrome.cookies.get({
+    let obj = await chrome.cookies.getAll({
       url: domain,
-      name: cookie_name
+      // name: cookie_name,
+      // name:cookie_set
     });
     console.log('dewdwd',obj);
-    let value = obj.value;
+    let value = obj[2].value;
+    console.log('accessToken',value);
     return value;
   }
  async function getPasswordList(){
