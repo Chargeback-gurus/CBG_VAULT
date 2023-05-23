@@ -6,13 +6,16 @@
 //   }
 //   );
 
-
-  chrome.action.onClicked.addListener(function(tab) { 
-    // var link = tab.url;
-    var x = new XMLHttpRequest();
-    x.open('GET', 'http://localhost:8082/vault-ext/credentials');
-    x.onload = function() {
-        alert(x.responseText);
-    };
-    x.send();
+chrome.runtime.onConnect.addListener(() => {
+  var link = tab.url;
+  chrome.cookies.get({url: "http://3.139.138.221/cbg_icbmp_web/#/auth/profile", name: 'accessToken'}, function(cookie) {
+token = cookie.value;
+console.log(token);
+});
+ });
+  chrome.action.onClicked.addListener(()=> { 
+    chrome.cookies.get({url: "http://3.139.138.221/cbg_icbmp_web/#/auth/profile", name: 'accessToken'}, function(cookie) {
+  token = cookie.value;
+  console.log(token);
+ });
 });

@@ -6,7 +6,17 @@
   "version": "1.0",
 
   "action": {
-     "default_popup": "popup.html"
+     "default_popup": "popup.html",
+     "default_icon": {
+      "1024": "/assets/CBG_logo.png",
+      "128": "/assets/CBG_logo.png",
+      "16": "/assets/CBG_logo.png",
+      "256": "/assets/CBG_logo.png",
+      "32": "/assets/CBG_logo.png",
+      "48": "/assets/CBG_logo.png",
+      "512": "/assets/CBG_logo.png",
+      "64": "/assets/CBG_logo.png"
+   }
   },
   
   "content_scripts": [

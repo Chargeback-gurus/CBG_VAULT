@@ -1,0 +1,16 @@
+#listofItem{
+    list-style: none;
+    padding: 0;
+    
+}
+#listofItem li{
+    margin: 30px 0px;
+    box-shadow: 4px 8px 6px 21px rgb(223, 225, 226);
+   
+}
+#listofItem li  img{
+    width: 20px;
+height: 20px;
+padding: 10px 10px 0px 10px;
+cursor: pointer;
+}
