@@ -108,7 +108,6 @@ for(const ele of btnElement){
   // });
 }
 
-
 if(document.readyState === 'loading') {
   var token;
   cookie_name = "accessToken",
@@ -126,7 +125,8 @@ if(document.readyState === 'loading') {
       // name:cookie_set
     });
     console.log('dewdwd',obj);
-    let value = obj[2].value;
+    const getAccessToken = obj.find((res)=> res.name === "accessToken");
+    let value = getAccessToken.value;
     console.log('accessToken',value);
     return value;
   }
