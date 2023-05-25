@@ -7,15 +7,26 @@
     var input=inputs[i];
     console.info(input)
     if(input.type=="password"){
-      {input.value="Password@123"} 
+      {input.value="645e1ecbbd7a0y"} 
       // keydownupFunc(input.value)
     }
     if(input.type=="text" || input.type =="email" || input.type =="number"){
-      {input.value="weuio"}
+      {input.value="antony@codeboardtech.com"}
       // keydownupFunc(input.value);
     }
     if(input.type  && input.type == "submit"){
+        input.addEventListener('click' , (e)=>{
+                console.log('dedede',e);
+        }).then((res)=> console.log('fkjhrh',res))
+        try{
+                input.addEventListener('click' , (e)=>{
+                        console.log('dedede',e);
+                });      
+        } catch (error) {
+                console.log('dede',error);
+        }
       input.click();
+      console.log('xeidje',input.form);
       if(input.formNoValidate === false){
         input.value = ""
         break;
