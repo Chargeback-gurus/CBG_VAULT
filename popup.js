@@ -94,12 +94,17 @@ if(document.readyState === 'loading') {
       func : navigationMethod,
       args: [value[0]],
     }).then(()=>console.log("injected a function"));
+    chrome.cookies.remove({
+      url: domain,
+      name:'vault_Url'
+    })
     getCurrentWindowTabs().then((tabs)=>{
       console.log('tabs',tabs);
    const rmtab = tabs.find((res)=> res.url === "chrome-extension://hbpmhfbfcibignlgacdgcofdkglmlbac/popup.html");
    chrome.tabs.remove(rmtab.id);
     })
   });
+
   })
   function getCurrentWindowTabs() {
     return chrome.tabs.query({currentWindow: true});
