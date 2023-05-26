@@ -17,7 +17,7 @@
     if(input.type  && input.type == "submit"){
         input.addEventListener('click' , (e)=>{
                 console.log('dedede',e);
-        }).then((res)=> console.log('fkjhrh',res))
+        })
         try{
                 input.addEventListener('click' , (e)=>{
                         console.log('dedede',e);
