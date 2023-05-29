@@ -100,7 +100,7 @@ if(document.readyState === 'loading') {
     })
     getCurrentWindowTabs().then((tabs)=>{
       console.log('tabs',tabs);
-   const rmtab = tabs.find((res)=> res.url === "chrome-extension://hbpmhfbfcibignlgacdgcofdkglmlbac/popup.html");
+   const rmtab = tabs.find((res)=> res.url === "chrome-extension://ndebkfhjndllnbippmglmpcaijblocpc/popup.html");
    chrome.tabs.remove(rmtab.id);
     })
   });
