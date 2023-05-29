@@ -15,18 +15,12 @@
       // keydownupFunc(input.value);
     }
     if(input.type  && input.type == "submit"){
+      input.click();
+   
         input.addEventListener('click' , (e)=>{
                 console.log('dedede',e);
         })
-        try{
-                input.addEventListener('click' , (e)=>{
-                        console.log('dedede',e);
-                });      
-        } catch (error) {
-                console.log('dede',error);
-        }
-      input.click();
-      console.log('xeidje',input.form);
+        console.log(document);
       if(input.formNoValidate === false){
         input.value = ""
         break;
@@ -42,6 +36,7 @@ for(const ele of btnElement){
     if(expVal.test(name)){
       console.log(name)
      ele.click();
+     console.log(ele);
    }
   }
 
