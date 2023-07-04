@@ -19,11 +19,8 @@ function navigationMethod(selectedObj) {
      // keydownupFunc(input.value);
    }
    if(input.type  && input.type == "submit"){
-     input.click();
-     if(input.formNoValidate === false){
-       break;
-     }    
-     console.log(input)
+     input.click();  
+     console.log('status',input)
    };
  }
 
@@ -34,6 +31,7 @@ for(const ele of btnElement){
    if(expVal.test(name)){
      console.log(name)
     ele.click();
+    console.log('status',ele);
   }
  }
 }
@@ -67,7 +65,7 @@ if(document.readyState === 'loading') {
       url: domain,
     });
     console.log('dewdwd',obj);
-    const vaultURL = obj.find((res)=> res.name === "vault_Url");
+    const vaultURL = obj.find((res)=> res.name === "applicationUrl");
     const vaultUsername = obj.find((res)=> res.name === "vault_userName");
     const vaultPassword= obj.find((res)=> res.name === "vault_Password");
     let temObj ={
